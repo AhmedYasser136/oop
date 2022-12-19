@@ -13,8 +13,8 @@ public :
     void setReal (float ) ;
     void setImag (float ) ;
 
-    float getReal ;
-    float getImag ;
+    float getReal() ;
+    float getImag() ;
 
     Complex add( Complex c);
     Complex sub( Complex c);
@@ -42,24 +42,21 @@ float Complex::getImag()
     return imag;
 }
 
-
-Complex Complex::add(Complex c)
-{
+Complex Complex::add (Complex c2){
     Complex temp;
-    temp.setReal(real + Complex.getReal());
-    temp.setImg(img + Complex.getImg());
-
-    return temp ;
+    temp.setReal(real + c2.getReal());
+    temp.setImag(imag + c2.getImag());
+    return temp;
 }
 
-Complex Complex::sub(Complex c)
-{
+Complex Complex::sub (Complex c2){
     Complex temp;
-    temp.setReal(real - Complex.getReal());
-    temp.setImg(img - Complex.getImg());
-
-    return temp ;
+    temp.setReal(real - c2.getReal());
+    temp.setImag(imag - c2.getImag());
+    return temp;
 }
+
+
 
 
 
@@ -67,7 +64,7 @@ void Complex::print()
 {
     if (imag<0)
     {
-        cout<<real<<"-"<<fabs(imag)<<"i"<<endl;
+        cout<<real<<"-"<<(imag)<<"i"<<endl;
     }
     else
     {
@@ -75,24 +72,18 @@ void Complex::print()
     }
 }
 
-
-
-
-
-
-
 int main()
 {
     float real , imag ;
     Complex myComp1, myComp2, resultComp ;
 
-    cout<<"int real and imag "<<endl;
+    cout<<"int real and imag num 1 "<<endl;
     cin>>real>>imag;
 
     myComp1.setReal(real);
     myComp1.setImag(imag);
 
-    cout<<"int real and imag "<<endl;
+    cout<<"int real and imag num 2"<<endl;
     cin>>real>>imag;
 
     myComp2.setReal(real);
